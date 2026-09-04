@@ -42,7 +42,7 @@ namespace AssignmentOOP02
             }
         }
         public DeliveryAddress Destination { get; set; }
-        public decimal EstimatedCost => DeliveryFee + (Weight * 5);
+        public virtual decimal EstimatedCost => DeliveryFee + (Weight * 5);
         #endregion
         #region Constructors
 
