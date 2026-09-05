@@ -24,13 +24,13 @@ namespace AssignmentOOP02
         {
             get
             {
-                if (shipments != null && position >= 0 && position < 10)
+                if (shipments != null && shipments[position]!=null && position >= 0 && position < 20)
                     return shipments[position];
                 return default;
             }
             set
             {
-                if (shipments != null && position >= 0 && position < 10)
+                if (shipments != null  && position >= 0 && position < 20)
                     shipments[position] = value;
             }
         }
@@ -41,9 +41,9 @@ namespace AssignmentOOP02
             {
                 if (shipments != null)
                 {
-                    for (int i = 0; i < 10; i++)
+                    for (int i = 0; i < 20; i++)
                     {
-                        if (shipments[i].TrackingCode == trackingCode)
+                        if (shipments[i]!=null &&shipments[i].TrackingCode == trackingCode)
                         {
                             return shipments[i];
 
@@ -66,7 +66,7 @@ namespace AssignmentOOP02
             {
                 for (int i = 0; i < 20; i++)
                 {
-                    if (shipments[i].TrackingCode is null)
+                    if (shipments[i] is null)
                     {
                         shipments[i] = shipment;
                         return true;
@@ -101,7 +101,11 @@ namespace AssignmentOOP02
                 for(int i = 0; i < 20; i++)
                 {
                     if (shipments[i] != null)
+                    {
                         shipments[i].PrintShipment();
+                        Console.WriteLine("\n");
+                    }
+                        
                 }
             }
            
