@@ -16,6 +16,22 @@
             //c-inherited member:TrackingCode
             //D-maintainability and reusability:modify the inherited menbers in single unit(parent class)
             #endregion
+            #region demonstrate inheritance relationships
+            //first way
+           // StandardShipment standardShipment = new StandardShipment("S01", "PC", 10, 80, new DeliveryAddress("Cairo", "Nasser", 9));
+           // standardShipment.Weight = 8; //property is visible by child
+
+           // ExpressShipment expressShipment= new ExpressShipment(30,"S01", "PC", 10, 80, new DeliveryAddress("Cairo", "Nasser", 9));
+           // expressShipment.Weight = 8; //property is visible by child
+
+           //InternationalShipment internationalShipment = new InternationalShipment("America",10,"S01", "PC", 10, 80, new DeliveryAddress("Cairo", "Nasser", 9));
+           // internationalShipment.Weight = 8; //property is visible by child
+
+            //another way
+            //Shipment s1 = new StandardShipment("S01", "PC", 10, 80, new DeliveryAddress("Cairo", "Nasser", 9)); //approved (reference from parent to object from child)
+            //Shipment s2 = new ExpressShipment(30,"S01", "PC", 10, 80, new DeliveryAddress("Cairo", "Nasser", 9)); //approved (reference from parent to object from child)
+            //Shipment s3 = new InternationalShipment("America",10,"S01", "PC", 10, 80, new DeliveryAddress("Cairo", "Nasser", 9)); //approved (reference from parent to object from child)
+            #endregion
         }
     }
 }
