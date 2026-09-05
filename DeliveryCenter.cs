@@ -8,11 +8,13 @@ namespace AssignmentOOP02
     {
         #region field
         private Shipment[] shipments;
+        private string centerName=null!;
         #endregion
         #region constructor
-        public DeliveryCenter()
+        public DeliveryCenter(string centerName)
         {
-            shipments = new Shipment[10];
+            shipments = new Shipment[20];
+            CenterName= centerName;
         }
 
         #endregion
@@ -54,6 +56,7 @@ namespace AssignmentOOP02
             }
 
         }
+        public string CenterName { get; }
 
         #endregion
         #region method
@@ -61,7 +64,7 @@ namespace AssignmentOOP02
         {
             if (shipments != null)
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     if (shipments[i].TrackingCode is null)
                     {
@@ -76,6 +79,35 @@ namespace AssignmentOOP02
 
 
         }
+        public bool RemoveShipment(string trackingCode)
+        {
+            if (shipments != null)
+            {
+                for(int i = 0; i < 20; i++)
+                {
+                    if (shipments[i]!=null && shipments[i].TrackingCode == trackingCode)
+                    {
+                        shipments[i] = null;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public void PrintAllShipments()
+        {
+            if (shipments != null)
+            {
+                for(int i = 0; i < 20; i++)
+                {
+                    if (shipments[i] != null)
+                        shipments[i].PrintShipment();
+                }
+            }
+           
+            
+        }
+
         #endregion
     }
 }
